@@ -8,17 +8,9 @@ jobs:
       - uses: actions/checkout@v5
       - name: Setup App
         run: make setup
-  tests:
-    name: Test 🧪
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run Tests
+        
+      - name: Run Tests 🧪
         run: make test
-  check-lint:
-    name: Check Eslint 📝
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check Eslint
+        
+      - name: Check Eslint 📝
         run: make lint
