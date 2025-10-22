@@ -1,15 +1,29 @@
-name: main-check
+name: Node CI
 
-on: push
+on: 
+  - push
+  - pull_request
+
+env:
+  CI: true
+
 jobs:
   build:
+  
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [24.x]
+    
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v6
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
         with:
-          node-version: '24.x'
+          node-version: ${{ matrix.node-version }}
           cache: 'npm'
+          
       - name: Setup App
         run: make setup
         
