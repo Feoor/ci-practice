@@ -6,6 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24.x'
+          cache: 'npm'
       - name: Setup App
         run: make setup
         
@@ -14,3 +18,6 @@ jobs:
         
       - name: Check Eslint 📝
         run: make lint
+
+      - name: Print Hello from Hexlet
+        uses: hexlet-components/hello-from-hexlet-action@release
