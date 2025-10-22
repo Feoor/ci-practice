@@ -1,0 +1,23 @@
+name: main-check
+
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup App
+        run: make setup
+  tests:
+    name: Test 🧪
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Tests
+        run: make test
+  check-lint:
+    name: Check Eslint 📝
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Eslint
+        run: make lint
