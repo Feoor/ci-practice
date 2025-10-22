@@ -1,3 +1,6 @@
+# Checks
+[![main-check](https://github.com/Feoor/ci-practice/actions/workflows/main-check.yml/badge.svg)](https://github.com/Feoor/ci-practice/actions/workflows/main-check.yml)
+
 # Example app for CI Hexlet course
 
 Starting boilerplate of [Strapi](https://strapi.io/) application
